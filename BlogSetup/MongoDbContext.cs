@@ -13,7 +13,12 @@ namespace BlogSetup
         public static string Database { get; set; }
         public static bool IsSSL { get; set; }
 
-        private IMongoDatabase _database { get; }
+        private IMongoDatabase _database;
+
+        private IMongoDatabase Get_database()
+        {
+            return _database;
+        }
 
         public MongoDbContext()
         {
@@ -36,12 +41,13 @@ namespace BlogSetup
             }
         }
 
-        public IMongoCollection<Post> Posts
+        public IMongoCollection<BlogPosts> Posts
         {
             get
             {
-                return _database.GetCollection<Post>("Posts");
+                return Get_database().GetCollection<BlogPosts>("Posts");
             }
         }
     }
 }
+
