@@ -12,9 +12,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="MongoDB.Bson" Version="2.8.1" />
     <PackageReference Include="MongoDB.Driver" Version="2.8.1" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.8.1" />
+    <PackageReference Include="React.AspNet.Middleware" Version="4.1.1" />
+    <PackageReference Include="React.Core" Version="4.1.1" />
+    <PackageReference Include="React.Router" Version="4.1.1" />
+    <PackageReference Include="React.Web" Version="4.1.1" />
+    <PackageReference Include="React.Web.Mvc4" Version="4.1.1" />
   </ItemGroup>
 
   <ItemGroup>

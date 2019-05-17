@@ -1,4 +1,5 @@
 ﻿import React, { Component } from 'react';
+import logo from './white_logo.png';
 
 export class Icon extends Component {
     static displayName = Icon.name;
@@ -7,7 +8,7 @@ export class Icon extends Component {
         return (
             <span class="logo">
                 <a href="/">
-                    <img src="/white_logo.png" />
+                    <img src={logo} alt="Logo" />
                 </a>
             </span>
         );
