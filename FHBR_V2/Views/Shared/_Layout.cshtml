@@ -16,6 +16,8 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
 
     <!-- Font Awesome JS -->
@@ -25,104 +27,77 @@
 <body>
 
 
- 
-        <div class="wrapper">
-            <!-- Sidebar -->
-            <nav id="sidebar">
 
-                <div id="dismiss">
-                    <i class="fas fa-arrow-left"></i>
-                </div>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
 
-                <div class="sidebar-header">
-                    <h3>Bootstrap Sidebar</h3>
-                </div>
-
-                <ul class="list-unstyled components">
-                    <p>Dummy Heading</p>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Videos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Store</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Blog</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
-                    </li>
-
-                </ul>
-            </nav>
-
-            <!-- Page Content -->
-            <div id="content">
-
-                <nav class="navbar navbar-expand-sm">
-                    <div class="container-fluid">
-
-                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                            <i class="fas fa-align-left"></i>
-                            <span>Toggle Sidebar</span>
-                        </button>
-                    </div>
-                </nav>
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
             </div>
 
-            <!-- Dark Overlay element -->
-            <div class="overlay"></div>
-        </div>
-  
-    <div class="row">
-        <div class="col-sm-3 text-center" style="background-color: black;">
+            <div class="sidebar-header">
+                <h3>Welcome</h3>
+            </div>
 
-            <a class="navbar-brand" href="#">
-                <img src="~/img/white_logo.png" alt="French Hawes Beer Reviews" style="height: 75px;" />
-            </a>
-
-            <ul class="navbar-nav flex-column">
-
+            <ul class="list-unstyled components">
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">About</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Videos</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Store</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Blog</a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Contact</a>
                 </li>
+
             </ul>
+        </nav>
 
+        <!-- Page Content -->
+        <div id="content">
 
+            <nav class="navbar navbar-expand-sm">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark black-background">
+                        <img src="~/img/white_logo.png" alt="French Hawes Beer Reviews" style="height: 75px;" />
+                    </button>
+                </div>
+            </nav>
+            <div class="col-sm-12">
+                <partial name="_CookieConsentPartial" />
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
         </div>
 
-        <div class="col-sm-9">
-            <partial name="_CookieConsentPartial" />
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
+        <!-- Dark Overlay element -->
+        <div class="overlay"></div>
+
+
+
+
+        
     </div>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2019 - French Hawes Beer Reviews
         </div>
+
     </footer>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -143,6 +118,14 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
