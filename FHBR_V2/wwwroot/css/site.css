@@ -13,10 +13,10 @@ a.navbar-brand {
 
 
 
-* {
+/** {
     box-sizing: border-box;
  
-}
+}*/
 
 body {
     font-family: 'Play', sans-serif;
