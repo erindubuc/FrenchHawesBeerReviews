@@ -11,6 +11,7 @@ namespace FHBR.Controllers
 {
     public class VideosController : Controller
     {
+        /*
         public ActionResult GetVideo(YouTubeData objYouTubeData)
         {
             try
@@ -62,5 +63,6 @@ namespace FHBR.Controllers
 
             return RedirectToAction("GetYouTube");
         }
+    */
     }
 }

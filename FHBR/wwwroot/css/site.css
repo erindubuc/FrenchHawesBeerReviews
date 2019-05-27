@@ -30,16 +30,17 @@ p {
     margin: 0.5rem 0;
 }
 
-/*
-img {
-    width: 100%;
-}
-    */
+
 /*
 .background-image {
     transform: scaleX(-1);
 }
     */
+
+
+/*--------------------------------------------------
+
+*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -55,18 +56,16 @@ html {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+/*
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
-
+*/
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
-}
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -79,12 +78,16 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+footer {
+    background-color: black;
+}
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    
 }
