@@ -1,0 +1,169 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/*
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+    */
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+* {
+    box-sizing: border-box;
+ 
+}
+
+body {
+    font-family: 'Play', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #999;
+}
+
+nav {
+    background-color: black;
+  
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
+/*
+img {
+    width: 100%;
+}
+    */
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* top layer */
+    z-index: 9999;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    /* full screen */
+    width: 100vw;
+    height: 100vh;
+    /* transparent black */
+    background: rgba(0, 0, 0, 0.7);
+    /* middle layer, i.e. appears below the sidebar */
+    z-index: 998;
+    opacity: 0;
+    /* animate the transition */
+    transition: all 0.5s ease-in-out;
+}
+    /* display .overlay when it has the .active class */
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    /* top right corner of the sidebar */
+    top: 10px;
+    right: 10px;
+}
+
+.showcase {
+    
+    height: 93vh;
+    position: relative;
+    background: url(https://glassmountainmag.com/wp-content/uploads/2018/12/mnm-all-552510-unsplash.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.showcase::after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0);
+    box-shadow: inset 50px 100px 90px 
+    #000000, inset -80px -50px 50px
+    #000000;
+}
+
+
+
+.showcase-top h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 0 0 2rem;
+}
+
+/*
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+*/
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background-color: white;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  line-height: 50px; /* Vertically center the text there */
+}
