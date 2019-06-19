@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.showcase {
+  height: 93vh;
+    position: relative;
+    background: url('img/beerglassOnBar.jpg') no-repeat center;
+    background-size: cover;
+}
+
+
