@@ -2,11 +2,13 @@ const mongoose = require('mongoose');
 
 // Create Schema
 const BlogPostSchema = new mongoose.Schema({
+  /*
   user: {
     // Associate user by id
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
+  */
   title: {
     type: String,
     required: true,
