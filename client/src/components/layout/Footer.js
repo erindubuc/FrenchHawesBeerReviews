@@ -19,6 +19,14 @@ export default () => {
           <a
             className="text-white"
             rel="noopener noreferrer"
+            target="_blank" id="footer-link-instagram" href="https://instagram.com"
+          >
+            <i className="fab fa-instagram white-text mr-4" />
+          </a>
+
+          <a
+            className="text-white"
+            rel="noopener noreferrer"
             target="_blank" id="footer-link-facebook" href="https://facebook.com"
           >
             <i className="fab fa-facebook-f white-text mr-4" />
@@ -30,6 +38,15 @@ export default () => {
           >
             <i className="fab fa-linkedin white-text mr-4" />
           </a>
+
+          <a
+            className="text-white"
+            rel="noopener noreferrer"
+            target="_blank" id="footer-link-untappd" href="https://untappd.com"
+          >
+            <i className="fab fa-untappd white-text mr-4" />
+          </a>
+
         </div>
       </div>
 
