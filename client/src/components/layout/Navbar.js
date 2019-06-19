@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
+
 
 class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
-        <div className="container">
-          <a className="navbar-brand" href="landing.html">
-            FrenchHawes
-          </a>
+        <div className="row">
+          <div className="col-sm-3">
+            <Logo />
+
+          </div>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,7 +26,7 @@ class Navbar extends Component {
               <li className="nav-item">
                 <a className="nav-link" href="profiles.html">
                   {' '}
-                  Reviews
+
                 </a>
               </li>
             </ul>

@@ -1,13 +1,17 @@
-.App {
+
+/*.App {
   text-align: center;
 }
+*/
 body {
   margin-bottom: 100px !important;
 }
 
+/*
 img {
   width: 100%;
 }
+*/
 
 .landing {
   
@@ -15,9 +19,11 @@ img {
   background: url('./img/beerglassOnBar.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  
+  height: 93vh;
   margin-top: -24px;
   margin-bottom: -50px;
+  
 }
 
 .landing-inner {
@@ -34,6 +40,7 @@ img {
   width: 100%;
   height: 100%;
 }
+
 
 
 
