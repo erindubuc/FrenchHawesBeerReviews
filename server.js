@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
-const auth = require('./routes/api/auth');
+const users = require('./routes/api/users');
 const posts = require('./routes/api/posts');
 const reviews = require('./routes/api/reviews');
 
@@ -19,7 +19,11 @@ const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect(db)
+  .connect(db, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
@@ -30,7 +34,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 // Use Routes
-app.use('/api/auth', auth);
+app.use('/api/users', users);
 app.use('/api/posts', posts);
 app.use('/api/reviews', reviews);
 

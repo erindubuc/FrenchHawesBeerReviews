@@ -5,42 +5,55 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
-// Load Auth model
-const Auth = require('../../models/Auth');
+// Load Input Validation
+const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
-// @route GET api/auth/test
-// @desc Tests posts route
-// @access Public
-router.get('/test', (req, res) => res.json({ msg: "Auth works" }));
+// Load User model
+const User = require('../../models/User');
 
-// @route GET api/auth/register
-// @desc Register authorized user
-// @access Public
+// @route	GET api/users/test
+// @desc	Tests users route
+// @access	Public
+router.get('/test', (req, res) => res.json({ msg: 'Users Works' }));
+
+// @route	GET api/users/register
+// @desc	Register user
+// @access	Public
 router.post('/register', (req, res) => {
-  Auth.findOne({ email: req.body.email })
-    .then(auth => {
-      if (auth) {
-        return res.status(400).json({ email: 'Email already exists' });
-      } else {
-        const newAuth = new Auth({
-          name: req.body.name,
-          email: req.body.email,
-          password: req.body.password
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  // Check Validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  // first, find out if user exists
+  User.findOne({ email: req.body.email }).then(user => {
+    if (user) {
+      errors.email = 'Email already exists';
+      return res.status(400).json(errors);
+    } else {
+      const newUser = new User({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+      });
+
+      bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+          if (err) throw err;
+          newUser.password = hash;
+          newUser
+            .save()
+            .then(user => res.json(user))
+            .catch(err => console.log(err));
         });
-
-        bcrypt.genSalt(10, (err, salt) => {
-          bcrypt.hash(newAuth.password, salt, (err, hash) => {
-            if (err) throw err;
-            newAuth.password = hash;
-            newAuth.save()
-              .then(user => res.json(auth))
-              .catch(err => console.log(err));
-
-          })
-        })
-      }
-    })
+      });
+    }
+  });
 });
+
 
 // @route GET api/auth/login
 // @desc Login authorized user / Returning JWT token
@@ -50,21 +63,21 @@ router.post('/login', (req, res) => {
   const password = req.body.password;
 
   //Find user by email
-  Auth.findOne({ email })
-    .then(auth => {
+  User.findOne({ email })
+    .then(user => {
       // Check for the user
-      if (!auth) {
+      if (!user) {
         return res.status(404).json({ email: 'Authorized user not found' });
       }
 
       // Check password
-      bcrypt.compare(password, auth.password)
+      bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
             // User matched
 
             // Create JWT payload
-            const payload = { id: auth.id, name: auth.name }
+            const payload = { id: user.id, name: user.name }
 
             // Sign token --> payload, send secret/key
             jwt.sign(
