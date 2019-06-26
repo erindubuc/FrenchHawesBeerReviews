@@ -6,7 +6,7 @@ import Logo from './Logo';
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
+      <nav className="navbar navbar-expand-sm mb-4">
         <div className="row">
           <div className="col-sm-3">
             <Logo />
@@ -31,7 +31,7 @@ class Navbar extends Component {
               </li>
             </ul>
 
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/reviews">
                   Reviews

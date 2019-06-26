@@ -6,7 +6,13 @@
 body {
   margin-bottom: 100px !important;
 }
-
+.navbar {
+  background-color: black;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
 /*
 img {
   width: 100%;
@@ -16,7 +22,7 @@ img {
 .landing {
   
   position: relative;
-  background: url('./img/beerglassOnBar.jpg') no-repeat;
+  background: url('./img/beerOnBarFlipped.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   
@@ -28,8 +34,8 @@ img {
 
 .landing-inner {
   padding-top: 350px;
-  padding-right: 350px;
-  padding-left: 20px;
+  padding-right: 20px;
+  padding-left: 400px;
 }
 
 .dark-overlay {
