@@ -7,7 +7,7 @@ class Landing extends Component {
         <div className="dark-overlay landing-inner text-light">
           <div className="container">
             <div className="row">
-              <div className="col-md-12 text-center">
+              <div className="col-md-6 text-center">
                 <h1 className="display-4 mb-4">Drink Good Beer With Good Friends</h1>
                 <p className="lead">
                   {' '}
